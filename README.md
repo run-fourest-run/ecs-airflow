@@ -1,5 +1,14 @@
-# airflow-ecs
-Setup to run Airflow in AWS ECS containers
+# Astronomer Airflow Demo
+Airflow Deployed on Amazon ECS using Teradata/shell deployment scripts.  forked from https://github.com/nicor88/aws-ecs-airflow. Additional changes were made from the original repository in order for me to make the demo work (source changes in terraform,shell,dockerfiles files)
+
+
+# DAG demonstration
+
+Demo pipeline/workflow represented by DAG definition file will source/fetch data from RapidAPI's yahoo finance endpoints & post to S3 and ideally Redshift from there. There are also some tasks that build the underlying data storage elements (buckets, sql tables, etc.) 
+
+
+
+
 
 ## Requirements
 
@@ -74,8 +83,3 @@ The deployment script will take care of:
 * push a new ECR image to your repository
 * re-deploy the new ECS services with the updated image
 
-## TODO
-* Create Private Subnets
-* Move ECS containers to Private Subnets
-* Use ECS private Links for Private Subnets
-* Improve ECS Task and Service Role
